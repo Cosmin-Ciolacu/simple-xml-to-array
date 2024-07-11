@@ -1,0 +1,26 @@
+{
+    "name": "cosmin-ciolacu/simple-xml-to-array",
+    "description": "Simple to use xml to php array converter",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "CosminCiolacu\\SimpleXmlToArray\\": "src/",
+            "CosminCiolacu\\SimpleXmlToArray\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cosmin ciolacu",
+            "email": "cosminciolacu99@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
