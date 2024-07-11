@@ -2,6 +2,10 @@
 
 This package provides a simple and efficient way to convert XML data to a PHP array.
 
+## Requirements
+
+- PHP 7.0 or higher
+
 ## Installation
 
 You can install the package via Composer:
@@ -41,4 +45,9 @@ try {
 
 ```bash
 ./vendor/bin/pest
+```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 ```

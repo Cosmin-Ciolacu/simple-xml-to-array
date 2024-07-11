@@ -2,6 +2,15 @@
     "name": "cosmin-ciolacu/simple-xml-to-array",
     "description": "Simple to use xml to php array converter",
     "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "xml",
+        "array",
+        "simplexml"
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
     "autoload": {
         "psr-4": {
             "CosminCiolacu\\SimpleXmlToArray\\": "src/",
