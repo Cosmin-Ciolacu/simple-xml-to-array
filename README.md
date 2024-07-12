@@ -41,6 +41,22 @@ try {
 }
 ```
 
+it could also be used with a file path
+
+```php
+use CosminCiolacu\SimpleXmlToArray\SimpleXmlToArray;
+use CosminCiolacu\SimpleXmlToArray\Exceptions\InvalidXmlException;
+
+try {
+    $xmlFile = 'path/to/file.xml';
+    $data = SimpleXmlToArray::convert($xmlFile, "file");
+
+    print_r($data);
+} catch (InvalidXmlException $e) {
+    echo $e->getMessage();
+}
+```
+
 ## Testing
 
 ```bash

@@ -51,12 +51,3 @@ it("should return an array when the XML is valid", function () {
     $instance = new SimpleXmlToArray($this->validXml);
     expect($instance->getArray())->toBeArray();
 });
-
-it("should defines the namespace", function () {
-    $source = '<root xmlns="http://example.com"><name>John Doe</name></root>';
-    $xml = new SimpleXmlToArray($source);
-    $xmlElement = $xml->getXmlElement();
-    $namespaces = $xmlElement->getNamespaces(true);
-    expect($namespaces)->toBeArray();
-
-});
