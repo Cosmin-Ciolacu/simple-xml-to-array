@@ -2,7 +2,7 @@
   "name": "cosmin-ciolacu/simple-xml-to-array",
   "description": "Simple to use xml to php array converter",
   "type": "library",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "keywords": [
     "xml",
