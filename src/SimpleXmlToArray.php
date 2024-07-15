@@ -1,6 +1,7 @@
 <?php
 namespace CosminCiolacu\SimpleXmlToArray;
 
+use CosminCiolacu\SimpleXmlToArray\Exceptions\InvalidPathException;
 use CosminCiolacu\SimpleXmlToArray\Exceptions\InvalidXmlException;
 
 class SimpleXmlToArray
@@ -16,6 +17,9 @@ class SimpleXmlToArray
         if ($mode === "string") {
             $this->xmlElement = simplexml_load_string($source);
         } else {
+            if (!file_exists($source)) {
+                throw new InvalidPathException();
+            }
             $this->xmlElement = simplexml_load_file($source);
         }
     }
@@ -54,6 +58,15 @@ class SimpleXmlToArray
             return json_decode(json_encode($xmlElement), true);
         } catch (InvalidXmlException $ex) {
             throw new InvalidXmlException();
+        }
+    }
+
+    public static function loadFile(string $path): self
+    {
+        try {
+            return new SimpleXmlToArray($path, "file");
+        } catch (InvalidPathException $ex) {
+            throw new InvalidPathException();
         }
     }
 }

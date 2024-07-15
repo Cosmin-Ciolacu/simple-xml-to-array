@@ -51,3 +51,19 @@ it("should return an array when the XML is valid", function () {
     $instance = new SimpleXmlToArray($this->validXml);
     expect($instance->getArray())->toBeArray();
 });
+
+it("should not throw an exception when the XML file exists", function () {
+    $xmlFile = __DIR__ . '/data/valid.xml';
+    $instance = SimpleXmlToArray::loadFile($xmlFile);
+    expect($instance->isValid())->toBeTrue();
+});
+
+it("should throw an exception when the XML file does not exist", function () {
+    $xmlFile = __DIR__ . '/data/test.xml';
+    expect(/**
+     * @throws \CosminCiolacu\SimpleXmlToArray\Exceptions\InvalidPathException
+     */ function () use ($xmlFile) {
+        return SimpleXmlToArray::loadFile($xmlFile);
+    })
+        ->toThrow(CosminCiolacu\SimpleXmlToArray\Exceptions\InvalidPathException::class);
+});
